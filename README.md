@@ -39,12 +39,12 @@ Remember to change the port on the requests. eg. *http://localhost:8000*.
 ## Using the API ##
 
 ### Authentication ###
-The API uses a Token to authenticate users. When you access it for the first time
-you need to provide your credentials to fetch the token. On subsequest requests you
+The API uses a Token to authenticate users. When you access it for the first time,
+you need to provide your credentials to fetch the token. On subsequest requests, you
 can use the token as an HTTP header to authenticate your user agains the service.
 Tokens are unique per user and do not expire.
 
-To retrieve your user token you need to make a POST request to *http://localhost/auth/*
+To retrieve your user token, you need to make a POST request to *http://localhost/auth/*
 with the following json payload
 
     {
@@ -52,14 +52,14 @@ with the following json payload
         'password': 'password'
     }
 
-If the credentials are correct you will receive a token which you can use to
+If the credentials are correct, you will receive a token which you can use to
 authenticate the following requests. Send an *Authorization* header with the
 work Token followed by your received token.
 
     Authorization: Token 70c7f0aa64807222a381d7d32eed76d3ede8c38f
 
 ### Listing your reviews ###
-To list your reviews send a GET request to *http://localhost/reviews/*. Note
+To list your reviews, send a GET request to *http://localhost/reviews/*. Note
 that you can only see your own reviews.
 
 ### Creating a new review ###
@@ -90,7 +90,7 @@ panel allows you to create users, see reviews created by all users and delete re
 
 ### BasicAuth ###
 It allows you to authenticate using HTTP's username/password basic authentication.
-Although is extremelly convinent for testing it's not recommended to use it in
+Although is extremelly convinent for testing, it's not recommended to use it in
 production (especially without TLS). You can disable it by commenting a line in
 *webservice/settings.py*.
 
