@@ -1,0 +1,4 @@
+Django==2.0
+djangorestframework==3.8
+coreapi==2.3
+markdown==2.6

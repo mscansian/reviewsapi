@@ -1,0 +1,14 @@
+version: "3"
+services:
+    reviewsapi:
+        container_name: reviewsapi
+        image: mscansian/reviewsapi
+        build:
+            context: .
+        volumes:
+            # Share volume so I can update the code without restarting
+            - ./webservice:/var/www
+        ports:
+            - "80:8000"
+        environment:
+            - DJANGO_SECRET_KEY=this is an ultra secret key created by the nsa
