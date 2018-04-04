@@ -14,7 +14,8 @@ class ReviewListCreateRetrieveTests(APITestCase):
         self.username = 'johndoe'
         self.email = 'john@doe.com'
         self.password = 'trustno1'
-        self.user = User.objects.create_user(self.username, self.email, self.password)
+        self.user = User.objects.create_user(self.username, self.email,
+                                             self.password)
         self.token = Token.objects.get(user=self.user)
         self.client.credentials(HTTP_AUTHORIZATION='Token ' + self.token.key)
 
@@ -117,6 +118,7 @@ class ReviewListCreateRetrieveTests(APITestCase):
         url = reverse('review-detail', args=(review.pk,))
         response = self.client.get(url)
         self.assertNotEqual(response.status_code, status.HTTP_200_OK)
+
 
 class ApiAuthTests(APITestCase):
     """Test case for detecting unauthenticated access to the api"""

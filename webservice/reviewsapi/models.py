@@ -12,7 +12,8 @@ class Review(models.Model):
     company = models.CharField(max_length=64)
     title = models.CharField(max_length=64)
     summary = models.TextField(max_length=1e4)
-    rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    rating = models.IntegerField(validators=[MinValueValidator(1),
+                                             MaxValueValidator(5)])
     author = models.CharField(max_length=64)
 
     # Metadata

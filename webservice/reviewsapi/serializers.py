@@ -6,5 +6,6 @@ class ReviewSerializer(serializers.ModelSerializer):
     """Review DRF serializer"""
     class Meta:
         model = Review
-        fields = ('id', 'company', 'title', 'summary', 'rating', 'author', 'ip_addr', 'created')
+        fields = ('id', 'company', 'title', 'summary', 'rating',
+                  'author', 'ip_addr', 'created')
         read_only_fields = ('ip_addr', 'created')

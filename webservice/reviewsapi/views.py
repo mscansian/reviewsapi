@@ -21,4 +21,3 @@ class ReviewsViewSet(CreateModelMixin,
         serializer.validated_data['ip_addr'] = ip_addr
         serializer.validated_data['user'] = self.request.user
         super().perform_create(serializer)
-
